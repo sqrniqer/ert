@@ -1,0 +1,27 @@
+.container-wrapper
+{
+    width: 260px;
+    height: 320px;
+    cursor: pointer;
+}
+.picture-wrapper
+{
+    width: 260px;
+    height: 260px;
+    border: 1px solid #a4a4a4;
+    box-shadow: 0px 2px 4px rgba(100,100,100,0.5);
+}
+.text-wrapper
+{
+    width: 260px;
+    height: 60px;
+}
+.text-title
+{
+    font-size: 18px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    height: 100%;
+    margin: 0px;
+}
