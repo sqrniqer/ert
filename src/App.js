@@ -1,14 +1,17 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
 //import styled from 'styled-components'
 import './App.css';
-import MainpageProductShowcase from './components/MainpageProductShowcase/MainpageProductShowcase'
-
+import Frontpage from './pages/Frontpage';
 
 
 function App() {
   return (
     <div className="App">
-      <MainpageProductShowcase  photo="/images/DIN931.png" Title='z łbem sześciokątnym'/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/frontpage" element={<Frontpage/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
 
   );
