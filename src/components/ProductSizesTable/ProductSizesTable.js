@@ -29,21 +29,24 @@ function TableCell(props){
         </div>
     )
 }
+let header_style = {
+  width: "110px",
+  height: "30px",
+  border: "1px solid black",
+  display: "inline-block"
+}
 
-function ProductSizesTable(props) {
-    let headers = [props.headers]
-    let rows = [props.rows]
-    
+
+const ProductSizesTable = (props) => {
+    const headers = props.headers;
+    const rows = props.rows
+    const listHeaders = headers.map((header) =>
+      <div
+      className={"TableCell-Header-" + header} 
+      style={header_style}>{header}</div>
+    );
     return (
-      <div className="product-main-table-container">
-        {props.headers}
-        {props.rows}
-
-        <TableCell diameter="M8" length="140" status={available}/>
-        <TableCell diameter="M8" length="140" status={temp_unavailable}/>
-        <TableCell diameter="M8" length="140" status={unavailable}/>
-      </div>
-  
+      <ul>{listHeaders}</ul>
     );
   }
 
