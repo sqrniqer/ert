@@ -35,7 +35,10 @@ let header_style = {
   border: "1px solid black",
   display: "inline-block"
 }
-
+let cell_container_style = {
+  display: "flex",
+  flexDirection: "column",
+}
 
 const ProductSizesTable = (props) => {
     const headers = props.headers;
@@ -45,9 +48,36 @@ const ProductSizesTable = (props) => {
       className={"TableCell-Header-" + header} 
       style={header_style}>{header}</div>
     );
+
+
+    
+    const listRows = rows.map((row) => 
+    <div
+    className={"TableCell-Row-Container-" + row.D}
+    style={cell_container_style}
+    >{row.L.map((row) => 
+    <div
+    className={"TableCell-Row-Cell-" + row}
+    style={header_style}
+    >{row}
+
+    </div>)}
+    </div>)
+
+    let ul_style = {
+      display: "flex"
+    }
+    // poprawic to na dole zeby wycentrowac ta cala tabele
+    let table_main_container_style = {
+      textAlign: "center",
+    }
     return (
-      <ul>{listHeaders}</ul>
-    );
+      <div
+      style={table_main_container_style}>
+        <ul>{listHeaders}</ul>
+        <ul style = {ul_style}>{listRows}</ul>
+      </div>
+      );
   }
 
   export default ProductSizesTable

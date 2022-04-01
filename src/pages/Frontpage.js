@@ -2,20 +2,33 @@ import MainpageProductShowcase from '../components/MainpageProductShowcase/Mainp
 import ProductSizesTable from '../components/ProductSizesTable/ProductSizesTable'
 
 function Frontpage() {
-    const List = [
+    const headersList = ['l/d','M3,5', 'M4,2', 'M4,8']
+    const rowList = [
       {
-        L: 30,
-        D: ['M4', 'M5', 'M6', 'M8', 'M10']
+        D: 'l/d',
+        L: [25, 35, 45, 55, 70, 90, 100, 120]
+      },
+      {
+        D: 'M3,5',
+        L: [25, 35, 45, 55, "x", "x", "x", "x"]
+      },
+      {
+        D: 'M4,2',
+        L: ["x", "x", "x", "x", 70, 90, "x", "x"]
+      },
+      {
+        D: 'M4,8',
+        L: ["x", "x", "x", "x", "x", "x", 100, 120]
       }
     ]
     return (
       <div className="App">
         <MainpageProductShowcase  photo="/images/DIN931.png" Title='z łbem sześciokątnym'/>
         <ProductSizesTable 
-        headers= {['l/d','M4', 'M5', 'M6', 'M8', 'M10']}
-        rows = {List}
+        headers= {headersList}
+        rows = {rowList}
         />
-        
+              
       </div>
   
     );
