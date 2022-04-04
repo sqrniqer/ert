@@ -1,6 +1,6 @@
 import MainpageProductShowcase from '../components/MainpageProductShowcase/MainpageProductShowcase'
 import ProductSizesTable from '../components/ProductSizesTable/ProductSizesTable'
-
+import Navbar from '../components/navbar/Navbar'
 function Frontpage() {
     const headersList = ['l/d','M3,5', 'M4,2', 'M4,8']
     const rowList = [
@@ -23,6 +23,7 @@ function Frontpage() {
     ]
     return (
       <div className="App">
+        <Navbar/>
         <MainpageProductShowcase  photo="/images/DIN931.png" Title='z łbem sześciokątnym'/>
         <ProductSizesTable 
         headers= {headersList}
