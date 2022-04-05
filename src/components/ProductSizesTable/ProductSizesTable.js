@@ -1,10 +1,4 @@
-import './ProductSizesTable.css'
-
 // ogarnac jakos jak zrobic komponent ktory generowalby tabele 
-
-
-
-
 let available = {
   width: "110px",
   height: "30px",
@@ -23,10 +17,7 @@ let unavailable = {
 
 function TableCell(props){
     return (
-        <div 
-        className={"TableCell-" + props.diameter + "x" + props.length} 
-        style={props.status}>
-        </div>
+        <div className={"TableCell-" + props.diameter + "x" + props.length} style={props.status}> </div>
     )
 }
 let header_style = {
@@ -44,40 +35,40 @@ const ProductSizesTable = (props) => {
     const headers = props.headers;
     const rows = props.rows
     const listHeaders = headers.map((header) =>
-      <div
-      className={"TableCell-Header-" + header} 
-      style={header_style}>{header}</div>
-    );
+      <div className={"TableCell-Header-" + header} style={header_style}> {header} </div>);
 
 
-    
+      
     const listRows = rows.map((row) => 
-    <div
-    className={"TableCell-Row-Container-" + row.D}
-    style={cell_container_style}
-    >{row.L.map((row) => 
-    <div
-    className={"TableCell-Row-Cell-" + row}
-    style={header_style}
-    >{row}
+    <div className={"TableCell-Row-Container-" + row.D} style={cell_container_style}>
 
-    </div>)}
+    {row.L.map((row) => <div className={"TableCell-Row-Cell-" + row} style={header_style} >{row} </div>)}
+
     </div>)
 
     let ul_style = {
-      display: "flex"
+      display: "flex",
+      padding: "0px",
+      margin: "0px",
     }
-    // poprawic to na dole zeby wycentrowac ta cala tabele
     let table_main_container_style = {
-      textAlign: "center",
+      padding: "0px",
+      margin: "0px",
+    }
+    let table_main_wrapper_style = {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     }
     return (
-      <div
-      style={table_main_container_style}>
-        <ul>{listHeaders}</ul>
-        <ul style = {ul_style}>{listRows}</ul>
-      </div>
-      );
+      <div className="Table-Wrapper" style={table_main_wrapper_style}>
+        <div style={table_main_container_style}>
+
+          <div><ul style = {ul_style}>{listHeaders}</ul></div>
+          <div><ul style = {ul_style}>{listRows}</ul></div>
+
+        </div>
+      </div>);
   }
 
   export default ProductSizesTable
