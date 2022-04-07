@@ -21,10 +21,22 @@ function Frontpage() {
         L: ["x", "x", "x", "x", "x", "x", 100, 120]
       }
     ]
+    const container_style = {
+      display: "flex"
+    }
     return (
       <div className="App">
         <Navbar/>
-        <MainpageProductShowcase  photo="/images/DIN931.png" Title='z łbem sześciokątnym'/>
+        <div className='Products-Showcase-container' style={container_style}>
+          <MainpageProductShowcase  photo="/images/DIN603NPG.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN912NPG.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN912PG.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN931.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN933.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN934.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN985.png" Title='z łbem sześciokątnym'/>
+          <MainpageProductShowcase  photo="/images/DIN7991.png" Title='z łbem sześciokątnym'/>
+        </div>
         <ProductSizesTable 
         headers= {headersList}
         rows = {rowList}
